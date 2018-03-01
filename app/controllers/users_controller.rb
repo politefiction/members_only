@@ -6,10 +6,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #flash[:success] = "Account successfully created."
-      #redirect_to root_url
+      flash[:success] = "Account successfully created."
+      render 'show'
     else
+      flash[:danger] = "Unable to save account. Please try again."
+      render 'new'
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
