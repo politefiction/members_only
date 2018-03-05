@@ -1,4 +1,5 @@
 require 'test_helper'
+# Will clean up/organize
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
@@ -6,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_user_url
+    get new_user_path
     assert_response :success
   end
 
@@ -62,6 +63,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not @user.valid?
     @user.password_confirmation = "a" * 6
     assert @user.valid?
+  end
+
+  test "should render signup page when user invalid" do
+  end
+
+  test "should render show page when user valid" do 
   end
 
 end
