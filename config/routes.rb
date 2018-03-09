@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :posts
   root 'static_pages#home'
 
   get     '/login',   to: 'sessions#new'

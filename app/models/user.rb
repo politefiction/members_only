@@ -3,7 +3,6 @@ class User < ApplicationRecord
     before_create do 
         self.remember_token = User.new_token
         self.remember_digest = User.digest(remember_token)
-        #self.remember
     end
     before_save { self.email.downcase }
 
@@ -12,7 +11,7 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :password, length: { minimum: 6 }
     has_secure_password
-    # has_many_posts
+    has_many :posts
 
     def User.digest(string)
         Digest::SHA1.hexdigest(string)

@@ -1,4 +1,6 @@
 <h1>Profile Page</h1>
 
-<p>Page for <%= @user.name %></p>
+<h2><%= @user.name %></h2>
 
+<p><%= link_to "All posts", '#' %></p>
+<p><%= link_to "Make a new post", new_post_path %></p>

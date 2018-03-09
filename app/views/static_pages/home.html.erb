@@ -1,10 +1,13 @@
 <h1>Members Only</h1>
 
+<p>Front Page, I guess. Yep.</p>
+
 <h2>Links:</h2>
+<p><%= link_to "Post List", posts_path %></p>
 <% if logged_in? %>
     <p><%= link_to "Log out", logout_path, method: :delete %></p>
     <p><%= link_to "Profile", current_user %></p>
 <% else %>
-    <p><%= link_to "Signup", new_user_path %></p>
+    <p><%= link_to "Sign up", new_user_path %></p>
     <p><%= link_to "Log in", login_path %></p>
 <% end %>

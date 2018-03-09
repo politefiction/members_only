@@ -1,0 +1,8 @@
+<h1>Post #<%= @post.id %></h1>
+<h2><%= @post.title %></h2>
+<% if logged_in? %>
+    <p>By <%= User.find(@post.user_id).name %></p>
+<% else %>
+    <p>By Anonymous</p>
+<% end %>
+<p><%= @post.content %></p>
